@@ -10,6 +10,7 @@ import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
 import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
+import { Gutter } from '../../_components/Gutter'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -18,6 +19,8 @@ import { generateMeta } from '../../_utilities/generateMeta'
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
+
+import classes from './index.module.scss'
 
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
@@ -52,11 +55,19 @@ export default async function Page({ params: { slug = 'home' } }) {
 
   return (
     <React.Fragment>
-      <Hero {...hero} />
-      <Blocks
-        blocks={layout}
-        disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
-      />
+      {slug === 'home' ? (
+        <Gutter>
+          <Hero {...hero} />
+        </Gutter>
+      ) : (
+        <>
+          <Hero {...hero} />
+          <Blocks
+            blocks={layout}
+            disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}
+          />
+        </>
+      )}
     </React.Fragment>
   )
 }
@@ -75,12 +86,18 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
 
   let page: Page | null = null
 
+  let categories: Category[] | null = null
+
   try {
     page = await fetchDoc<Page>({
       collection: 'pages',
       slug,
       draft: isDraftMode,
     })
+
+    categories = await fetchDocs<Category>('categories')
+
+
   } catch (error) {
     // don't throw an error if the fetch fails
     // this is so that we can render a static home page for the demo
