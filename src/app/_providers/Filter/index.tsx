@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 'use client'
 
 import { createContext, ReactNode, SetStateAction, useContext, useState } from 'react'

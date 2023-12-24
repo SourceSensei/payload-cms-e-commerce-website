@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from 'react'
 
 import { Page } from '../../../payload/payload-types'

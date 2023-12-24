@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import type { Field } from 'payload/types'
 
 import linkGroup from './linkGroup'

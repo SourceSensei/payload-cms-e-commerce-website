@@ -10,7 +10,7 @@
     flex-direction: row;
     gap: 40px;
   }
-
+  
   @include small-break {
     flex-direction: column;
     gap: 20px;
@@ -60,3 +60,4 @@
 .hr {
   margin: 20px 0;
 }
+
