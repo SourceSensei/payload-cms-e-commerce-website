@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import type { Field } from 'payload/types'
 
 import linkGroup from './linkGroup'
@@ -56,7 +58,8 @@ export const hero: Field = {
       relationTo: 'media',
       required: true,
       admin: {
-        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact', 'customHero'].includes(type),
+        condition: (_, { type } = {}) =>
+          ['highImpact', 'mediumImpact', 'customHero'].includes(type),
       },
     },
   ],
