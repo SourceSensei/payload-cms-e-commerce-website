@@ -1,4 +1,4 @@
-<img src="https://drive.google.com/file/d/1jL8yVDJftPr47gZeCpzDaTcy795AcH7O/view?usp=sharing" alt="ecommerce1" >
+![Texto Alternativo](https://drive.google.com/file/d/1jL8yVDJftPr47gZeCpzDaTcy795AcH7O/view?usp=sharing)
 
 # Payload E-Commerce Template
 
