@@ -1,4 +1,4 @@
-<img src="https://drive.google.com/file/d/1jL8yVDJftPr47gZeCpzDaTcy795AcH7O/view?usp=sharing" alt="ecommerce1" width="500" height="600"/>
+<img src="https://drive.google.com/file/d/1jL8yVDJftPr47gZeCpzDaTcy795AcH7O/view?usp=sharing" alt="ecommerce1" />
 
 # Payload E-Commerce Template
 
