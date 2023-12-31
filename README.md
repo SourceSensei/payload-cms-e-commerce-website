@@ -1,4 +1,4 @@
-![Texto Alternativo](https://ibb.co/qY17Kvj)
+<img src="https://ibb.co/qY17Kvj" />
 
 
 # Payload E-Commerce Template
